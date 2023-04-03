@@ -1,0 +1,41 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 5px;
+    background-color: rgb(242, 237, 237);
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.header>img{
+    width: 100px;
+}
+.header>ul{
+    list-style-type: none;
+    display: flex;
+    
+}
+.header>ul>li{
+    padding: 2px;
+    margin: 5px;
+}
+.restaurant-list{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+.card{
+    margin: 10px;
+    width: 200px;
+    border: 2px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+}
+.card>img{
+    width: 100%;
+}
+.card>div{
+    display: flex;
+    justify-content: space-between;
+}
