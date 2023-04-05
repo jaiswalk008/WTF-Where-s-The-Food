@@ -2,8 +2,7 @@
 const Title =()=>{
      return <img src="https://th.bing.com/th/id/OIP.j9ihD-QxgghPCBF6jWOkVAHaHa?w=218&h=218&c=7&r=0&o=5&pid=1.7" alt="wtf logo"/>;
 }
-
-export default Header =()=>{
+const Header =()=>{
     return (
         <div className="header">
             <Title/>
@@ -17,3 +16,4 @@ export default Header =()=>{
         </div>
     )
 }
+export default Header;

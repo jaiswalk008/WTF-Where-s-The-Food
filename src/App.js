@@ -5,7 +5,9 @@ import Body from "./Components/Body"
 const AppLayout=()=>{
     return(
         <>
+
             <Header/>
+           
             <Body/>
         </>
         
