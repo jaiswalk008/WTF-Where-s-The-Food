@@ -1,16 +1,18 @@
 import {restaurantList} from "../constants"
 import RestaurantCard from "./RestaurantCard"
+import { useState } from "react"
 export default Body = ()=>{
-    let searchText='KFC'
+    const [searchText, setSearchText] = useState("");
     return (
         <>
             <div className="search-container">
-                <input type="text" className="search-input" 
+                <input  type="text" className="search-input" 
                 placeholder="search" value={searchText} onChange={(e) => {
-                    searchText =e.target.value;
-                    console.log(searchText);
+                    setSearchText(e.target.value);
                 }}/>
-                <button className="search-button">search</button>
+                
+                <button style={{backgroundColor:"black", color:"white",margin:"5px",height:"30px",borderRadius:"5px"}}
+                 className="search-button">search {searchText}</button>
             </div>
             <div className="restaurant-list">
            
