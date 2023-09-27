@@ -22,9 +22,46 @@
 .restaurant-list{
     display: flex;
     padding: 10px;
-    justify-content: space-between;
+    justify-content:center;
     flex-wrap:wrap;
 }
+.shimmer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .shimmer-card {
+    width: 220px;
+    height: 350px;
+    background-color: rgb(246, 241, 241);
+    border: 1px solid rgb(177, 175, 175);
+    border-radius: 10px;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shimmer-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    animation: shimmer 1.5s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
 .card{
     margin: 10px;
     width: 200px;
@@ -43,6 +80,7 @@
     border:2px solid black;
     height: 100%;
     border-radius: 5px;
+    margin-right: 10px;
 }
 .search-container{
     display: flex;
