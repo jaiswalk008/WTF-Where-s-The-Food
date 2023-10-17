@@ -10,14 +10,25 @@
 .header>img{
     width: 100px;
 }
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  font-size: 1.075rem;
+}
 .header>ul{
     list-style-type: none;
     display: flex;
     
 }
-.header>ul>li{
+.header>ul>a{
     padding: 2px;
     margin: 5px;
+}
+.header>ul>li{
+  padding: 2px;
+  margin: 5px;
 }
 .restaurant-list{
     display: flex;

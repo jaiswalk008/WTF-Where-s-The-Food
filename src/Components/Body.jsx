@@ -1,8 +1,9 @@
-import {restaurantList} from "../constants"
+// import {restaurantList} from "../constants"
 import RestaurantCard from "./RestaurantCard"
 import { useEffect, useState } from "react"
 import axios from "axios";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 function filterSearch(restaurants,searchText){
     return restaurants.filter((restaurant) => restaurant.info.name.toLowerCase().includes(searchText.toLowerCase()));
 }
@@ -18,11 +19,13 @@ export default Body = ()=>{
 
     useEffect(()=>{
         getRestaurants();
-    }, []);
+    },[]);
     async function getRestaurants(){
+        // console.log('hello');
         try {
             const res = await axios.get('https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.5830002&lng=88.3372909&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING')
             const data = res?.data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+            // console.log(data)
             setAllRestaurants(data);
             setFilteredRestaurants(data);
 
@@ -42,7 +45,7 @@ export default Body = ()=>{
                     setSearchText(e.target.value);
                     // console.log(searchText);
                 }}></input>
-                <button className="search-btn " onClick={() =>{
+                <button className="search-btn" onClick={() =>{
                    const data = filterSearch(allRestaurants , searchText);
                    setFilteredRestaurants(data);
                    
@@ -53,9 +56,13 @@ export default Body = ()=>{
                 {filteredRestaurants?.length === 0 ? (
                     <h1>No restaurant found!!</h1>
                 ) : (
-                    filteredRestaurants.map((restaurant) => (
-                    <RestaurantCard key={restaurant?.info?.id} {...restaurant.info} />
-                    ))
+                    filteredRestaurants.map((restaurant) => {
+                        return (
+                            <Link to={"/restaurant/"+restaurant?.info?.id}>
+                                <RestaurantCard key={restaurant?.info?.id} {...restaurant.info} />
+                            </Link>
+                        )
+                    })
                 )}
             </div>
         </>

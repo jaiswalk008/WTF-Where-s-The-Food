@@ -1,5 +1,6 @@
 
 import {IMG_CDN_URL} from "../constants"
+import { Link } from "react-router-dom";
 const RestaurantCard= ({name,cuisines,avgRating,costForTwo,cloudinaryImageId})=>{
     return(
         <div className="card">
