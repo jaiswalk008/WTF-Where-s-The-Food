@@ -12,19 +12,33 @@ const Header =()=>{
         setIsLoggedIn(!isLoggedIn);
     }
     return (
-        <div className="header">
-            <Title/>
-            <ul>
-                {/* still <a> will appear in the html because link uses <a> under the hood */}
-                <Link to="/"><li>Home</li></Link>
-                <Link to="/About"><li>About</li></Link>
-                <Link to="/Contact"><li>Contact</li></Link>
-                <Link to="#"><li>Cart</li></Link>
-            </ul>
-             
-           {isLoggedIn? <button onClick={authenticate}>logout</button> : 
-           <button onClick={authenticate}>login</button>}
-        </div>
-    )
+      <div className="header">
+        <Title />
+        <ul>
+          {/* still <a> will appear in the html because link uses <a> under the hood */}
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="/About">
+            <li>About</li>
+          </Link>
+          <Link to="/Contact">
+            <li>Contact</li>
+          </Link>
+          <Link to="#">
+            <li>Cart</li>
+          </Link>
+          <Link to="/instamart">
+            <li>Instamart</li>
+          </Link>
+        </ul>
+
+        {isLoggedIn ? (
+          <button onClick={authenticate}>logout</button>
+        ) : (
+          <button onClick={authenticate}>login</button>
+        )}
+      </div>
+    );
 }
 export default Header;
